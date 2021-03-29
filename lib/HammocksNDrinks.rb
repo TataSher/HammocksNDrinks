@@ -1,0 +1,2 @@
+class HammocksNDrinks
+end
