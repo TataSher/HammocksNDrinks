@@ -41,7 +41,7 @@ SimpleCov.start
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.before(:each) do
-    # setup_test_database
+    setup_test_database
   end
 
   config.include Capybara::DSL
