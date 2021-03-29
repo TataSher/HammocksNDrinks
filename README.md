@@ -54,6 +54,29 @@ I want to be able to see a list of all spaces (hammocks)
 > Database table for space hammocks (set up two environments) - hammocks
 
 
+- write feature test for listing a space 
+- fail test
+- make it pass by routing to a view with a space
+
+- writing a model test for SpaceHammock class 
+- fail first test
+- setting up SpaceHammock class to pass the test
+
+- implement the classes in the view/app.rb
+- re-write feature test to list all spaces
+
+- writing a model test for HammocksNDrinks class and #list_all method
+- fail first test
+- setting up HammocksNDrinks class to pass the test
+
+- Refactor
+
+- Introduce development and test databases
+- Create database and test environments
+- Refactor to make the tests pass
+
+- Refactor the code and tests again when #create method is complete (we will use pg sql commands for now)
+
 
 
 
