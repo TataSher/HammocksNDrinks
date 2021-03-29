@@ -12,6 +12,7 @@ class MakersHnDWebApp < Sinatra::Base
   end
 
   get '/' do
+    'hello world'
   end
   
   run! if app_file == $0
