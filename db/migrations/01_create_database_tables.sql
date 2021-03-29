@@ -1,0 +1,1 @@
+-- No table setup required currently
