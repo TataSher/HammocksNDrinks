@@ -99,6 +99,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  x86_64-darwin-19
   x86_64-darwin-20
 
 DEPENDENCIES
@@ -117,4 +118,4 @@ DEPENDENCIES
   timecop
 
 BUNDLED WITH
-   2.2.8
+   2.2.9
