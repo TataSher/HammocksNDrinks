@@ -14,6 +14,14 @@ class MakersHnDWebApp < Sinatra::Base
   get '/' do
     'hello world'
   end
-  
+
+  get '/space_hammocks' do
+    erb :index
+  end
+
+  get '/space_hammocks/new' do
+    erb :'/space_hammocks/new'
+  end
+
   run! if app_file == $0
 end
