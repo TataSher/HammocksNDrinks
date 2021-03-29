@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'sinatra/flash'
+require_relative './lib/hammocks_n_drinks.rb'
 
 class MakersHnDWebApp < Sinatra::Base
   enable :sessions, :method_override
@@ -21,6 +22,11 @@ class MakersHnDWebApp < Sinatra::Base
 
   get '/space_hammocks/new' do
     erb :'/space_hammocks/new'
+  end
+
+  post '/space_hammocks' do
+    HammocksNDrinks.create(params[:name], params[:description], params[:price_per_night])
+    redirect '/space_hammocks'
   end
 
   run! if app_file == $0
