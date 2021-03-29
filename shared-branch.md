@@ -12,3 +12,5 @@ Another test line
 
 yet another test line
 
+
+This line is to test merging on the local computer once pushed to the branch
