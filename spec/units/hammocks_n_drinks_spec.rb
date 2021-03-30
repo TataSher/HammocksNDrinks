@@ -6,12 +6,6 @@ describe HammocksNDrinks do
       expect(HammocksNDrinks.create('Neptune Blues', TEST_DESCRIPTION, '1000', 1)).to eq 'Neptune Blues'
     end
   end
-
-  describe '.book' do
-    it 'books a space hammock for user' do
-      expect(HammocksNDrinks.book(1,1).booked?).to eq True
-    end
-  end
 end
 
 TEST_DESCRIPTION = "Enjoy your luxury holiday on the idyllic planet of Neptune, at Neptune Blues you can while your worries away while drinking our famous Gas Seas Sparkling Methane."

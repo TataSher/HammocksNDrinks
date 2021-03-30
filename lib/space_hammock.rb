@@ -1,7 +1,9 @@
 require_relative 'database_connection'
 
 class SpaceHammock
-  def initialize(id, name, description, price_per_night, owner_id, booked, booked_by_user_id)
+  attr_reader :id, :name, :description, :price_per_night, :owner_id, :booked, :booked_by_user_id
+
+  def initialize(id, name, description, price_per_night, owner_id, booked=false, booked_by_user_id=nil)
     @id = id
     @name = name
     @description = description
@@ -17,7 +19,14 @@ class SpaceHammock
   end
 
   def self.find(hammock_id)
-
+    sql = "SELECT * FROM hammocks WHERE id='#{hammock_id}';"
+    begin
+      result = DatabaseConnection.query(sql).first
+      SpaceHammock.new(result["id"], result["name"], result["description"], result["price_per_night"], result["owner_id"], result["booked"], result["booked_by_user_id"])
+    rescue StandardError => e
+      p "There is no hammock with id #{hammock_id}"
+      nil
+    end
   end
 
   def book(user_id)
