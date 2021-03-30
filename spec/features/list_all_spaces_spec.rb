@@ -2,10 +2,12 @@ require './spec/spec_helper.rb'
 require './makers_hnd_web_app.rb'
 feature 'list all space hammocks' do
     scenario 'list one space hammock' do
-      visit '/hammocks_listings'
+      visit '/space_hammocks/new'
+      fill_in 'name', with: 'Sharkie'
+      fill_in 'description', with: 'coolest hammock'
+      fill_in 'price_per_night', with: 'price_per_night'
       expect(page).to have_content('Sharkie')
       expect(page).to have_content('coolest hammock')
       expect(page).to have_content('1000')
-      expect(page).to have_content('Lou')
     end
 end
