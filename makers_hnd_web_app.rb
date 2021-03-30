@@ -18,6 +18,7 @@ class MakersHnDWebApp < Sinatra::Base
   end
 
   get '/space_hammocks' do
+    @name = session[:name]
     erb :index
   end
 
@@ -26,7 +27,9 @@ class MakersHnDWebApp < Sinatra::Base
   end
 
   post '/space_hammocks' do
-    HammocksNDrinks.create(params[:name], params[:description], params[:price_per_night], 1)
+    HammocksNDrinks.create(params[:name], params[:description],
+                           params[:price_per_night], 1) # 1 is proxy for user
+    session[:name] = params[:name]
     redirect '/space_hammocks'
   end
 

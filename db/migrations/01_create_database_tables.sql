@@ -1,4 +1,5 @@
 CREATE TABLE users (id SERIAL PRIMARY KEY, name VARCHAR(200));
+INSERT INTO users (name) VALUES('test_user');
 
 CREATE TABLE hammocks (
 id SERIAL PRIMARY KEY,

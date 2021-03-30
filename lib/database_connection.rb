@@ -9,8 +9,6 @@ class DatabaseConnection
  		 @@database.exec(query_string)
   end
 
-private
-
   def self.database_connect
     if ENV['ENVIRONMENT'] == 'test'
       'makers_hnd_database_test'
@@ -18,4 +16,6 @@ private
       'makers_hnd_database'
     end
   end
+
+  private_class_method :database_connect
 end

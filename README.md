@@ -62,9 +62,9 @@ As a user-owner(Hammock-Lord! Master of the Beach)
 To add my own hammock/space
 I want to be able to list my space
 
-> List space erb file (with associated buttons and routes)
-> Functionality in HammocksNDrinks to create a space (which uses SpaceHammock class)
-> Include details in spaceHammock (name, description, price per night, owner)
+> List space erb file (with associated buttons and routes) - DONE
+> Functionality in HammocksNDrinks to create a space (which uses SpaceHammock class) - DONE (created database connection class as well)
+> Include details in spaceHammock (name, description, price per night, owner) - Done and setup table to match
 
 #### User Story 3
 As a user-booker

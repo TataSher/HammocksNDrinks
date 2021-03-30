@@ -9,5 +9,4 @@ describe SpaceHammock do
     end
   end
 
-
 end
