@@ -13,6 +13,10 @@ describe SpaceHammock do
 
   describe '.find' do
     it 'find a space-hammock based on the id from the database and creates it as an instance of space Hammock' do
+      SpaceHammock.create('test_name', 'test_description', 50, 1)
+      sql = "SELECT * FROM hammocks WHERE id='1';"
+      # expect(DatabaseConnection).to receive(:query).with(sql)
+      expect(SpaceHammock.find("1").id).to eq "1"
     end
   end
 

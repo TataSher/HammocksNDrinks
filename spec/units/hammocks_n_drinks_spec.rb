@@ -18,6 +18,7 @@ describe HammocksNDrinks do
       expect(hammocks).to eq ([{:name => "Sharkie", :description => "very cool", :price_per_night => "1000.00"}])
     end
   end
+<<<<<<< HEAD
 
 
   describe '.book' do
@@ -26,6 +27,8 @@ describe HammocksNDrinks do
     end
   end
 
+=======
+>>>>>>> 5881542 (find)
 end
 
 TEST_DESCRIPTION = "Enjoy your luxury holiday on the idyllic planet of Neptune, at Neptune Blues you can while your worries away while drinking our famous Gas Seas Sparkling Methane."
