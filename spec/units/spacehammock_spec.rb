@@ -1,4 +1,4 @@
-require 'SpaceHammock'
+require 'space_hammock'
 
 describe SpaceHammock do
   let(:new_hammock) { SpaceHammock.new('Sharkie', 'coolest hammock', '1000', 'Lou') }
@@ -8,4 +8,5 @@ describe SpaceHammock do
     expect(new_hammock.price_per_night).to eq('1000')
     expect(new_hammock.owner).to eq('Lou')
   end
+
 end
