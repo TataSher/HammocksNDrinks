@@ -5,8 +5,8 @@ def connect_to_test_database
 end
 
 def clean_test_database(connection)
-	 connection.exec("DROP TABLE IF EXISTS hammocks")
-	 connection.exec("DROP TABLE IF EXISTS users CASCADE")
+	 connection.exec("DROP TABLE IF EXISTS hammocks;")
+	 connection.exec("DROP TABLE IF EXISTS users CASCADE;")
 end
 
 def create_bookmarks_table_in_test(connection)
@@ -23,7 +23,7 @@ def create_bookmarks_table_in_test(connection)
 end
 
 def populate_tables(connection)
-  connection.exec("INSERT INTO users (name) VALUES('test_user_1')")
+  connection.exec("INSERT INTO users (name) VALUES('test_user_1');")
 end
 
 def setup_test_database
