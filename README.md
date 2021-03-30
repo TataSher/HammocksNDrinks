@@ -30,18 +30,48 @@ https://docs.google.com/spreadsheets/d/1d0Gz_mINWiapO09sTUBmpzQA9FhS1RZKjNgzkgxk
 ## Specifications and User Stories
 
 - [ ] Any signed-up user can list a new space.
-      - list a space
+      - User story 2 - delivers listing a spac
+      - User Story 5(a-c) for sign up and sign-in & sign-out
+      -
 - [ ] Users can list multiple spaces.
-- [ ] Users should be able to name their space, provide a short description of the space, and a price per night.
-      - provide details
+      -
+      - Wait for sign-in functionality
+- [x] Users should be able to name their space, provide a short description of the space, and a price per night.
+      - Delivered via user story 3 & 2
 - [ ] Users should be able to offer a range of dates where their space is available.
+      - need to implement - need another user story
 - [ ] Any signed-up user can request to hire any space for one night, and this should be approved by the user that owns that space.
-      - hire a space
+      - User story 4 - delivers booking function
+      - need user story for approval mechanism
 - [ ] Nights for which a space has already been booked should not be available for users to book that space.
+      - part of offering a range of dates
+      - need a mechanism for excluding booked dates
+      - need to adjust booking function to specify particular dates
 - [ ] Until a user has confirmed a booking request, that space can still be booked for that night.
+      - Until owner accepts request, property can still be booked by a user-booker.
 
+- [ ] add CSS
 
-Sign in - need a user story - second level priority
+- Other:
+  User profiles (hamocks they own, hammocks they have booked)
+  Add telephone number & email
+  Encrypted passwords
+
+#### User Story 5a
+As a user
+In order to access the functionality to add a new space
+I want to be able to sign-in
+
+#### User Story 5b
+As a user
+In order to have the website remember me
+I want to be able to register/sign-up
+
+#### User Story 5c
+As a user
+In order to avoid others using my profile
+I want to be able to sign-out
+
 
 #### User Story 1
 As a user-booker
@@ -57,24 +87,14 @@ I want to be able to see a list of all spaces (hammocks)
 
 
 
-
-- Introduce development and test databases
-- Create database and test environments
-- Refactor to make the tests pass
-
-- Refactor the code and tests again when #create method is complete (we will use pg sql commands for now)
-
-
-
-
 #### User Story 2
 As a user-owner(Hammock-Lord! Master of the Beach)
 To add my own hammock/space
 I want to be able to list my space
 
-> List space erb file (with associated buttons and routes)
-> Functionality in HammocksNDrinks to create a space (which uses SpaceHammock class)
-> Include details in spaceHammock (name, description, price per night, owner)
+> List space erb file (with associated buttons and routes) - DONE
+> Functionality in HammocksNDrinks to create a space (which uses SpaceHammock class) - DONE (created database connection class as well)
+> Include details in spaceHammock (name, description, price per night, owner) - Done and setup table to match
 
 #### User Story 3
 As a user-booker
@@ -85,6 +105,10 @@ I want to be able to see the details of the space (name, description, price per 
 As a user-booker
 To hire a space
 I want to be able to book a space hammocks
+
+> Need a button later
+> function to book a hammock (do it in hammocks_n_drinks, update to database: flag booked on hammock object)
+
 
 
 Break down user stories into tickets
