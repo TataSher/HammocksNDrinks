@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>MakersHnD</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
+
+  <body class="container">
+
+    <form action="/space_hammocks" method="post">
+      <label for="name">Name</label>
+      <input type="text" name="name" required>
+      <label for="description">description</label>
+      <textarea name="description" rows="3" cols="50" maxlength="1000" required></textarea>
+      <label for="price_per_night">Price per Night</label>
+      <input type="decimal" name="price_per_night" min="0" required>
+      <input type="submit" value="List!">
+    </form>
+
+  </body>
+</html>

@@ -2,6 +2,8 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require 'sinatra/flash'
 require './lib/space_hammock.rb'
+require_relative './lib/hammocks_n_drinks.rb'
+require_relative './db_connection_setup'
 
 class MakersHnDWebApp < Sinatra::Base
   enable :sessions, :method_override
@@ -16,9 +18,21 @@ class MakersHnDWebApp < Sinatra::Base
     'hello world'
   end
 
-  get '/hammocks_listings' do
+  get '/space_hammocks' do
     @hammock = SpaceHammock.new('Sharkie', 'coolest hammock', '1000', 'Lou')
+    @name = session[:name]
     erb :index
+  end
+
+  get '/space_hammocks/new' do
+    erb :'/space_hammocks/new'
+  end
+
+  post '/space_hammocks' do
+    HammocksNDrinks.create(params[:name], params[:description],
+                           params[:price_per_night], 1) # 1 is proxy for user
+    session[:name] = params[:name]
+    redirect '/space_hammocks'
   end
 
   run! if app_file == $0
