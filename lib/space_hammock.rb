@@ -24,6 +24,7 @@ class SpaceHammock
       result = DatabaseConnection.query(sql).first
       SpaceHammock.new(result["id"], result["name"], result["description"], result["price_per_night"], result["owner_id"], result["booked"], result["booked_by_user_id"])
     rescue StandardError => e
+      p e
       p "There is no hammock with id #{hammock_id}"
       nil
     end
