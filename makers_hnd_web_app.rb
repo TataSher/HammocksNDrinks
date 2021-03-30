@@ -20,6 +20,7 @@ class MakersHnDWebApp < Sinatra::Base
 
   get '/space_hammocks' do
     @all_hammocks = HammocksNDrinks.all
+    p @all_hammocks
     erb :index
   end
 
