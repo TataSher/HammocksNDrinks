@@ -35,5 +35,12 @@ class MakersHnDWebApp < Sinatra::Base
     redirect '/space_hammocks'
   end
 
+  get 'space_hammocks/:id/book' do
+    hammock = SpaceHammocks.find(params[:id]) # add a test hammock to the database for function test
+    user_id = 1
+    hammock.book(user_id) # need to move to post method
+    erb :booking_form
+  end
+
   run! if app_file == $0
 end
