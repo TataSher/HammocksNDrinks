@@ -76,6 +76,10 @@ As a user-booker
 To hire a space
 I want to be able to book a space hammocks
 
+> Need a button later
+> function to book a hammock (do it in hammocks_n_drinks, update to database: flag booked on hammock object)
+
+
 
 Break down user stories into tickets
 Organise tickets into priority
