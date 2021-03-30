@@ -20,9 +20,13 @@ GEM
     highline (2.0.3)
     jaro_winkler (1.5.4)
     mini_mime (1.0.2)
+    mini_portile2 (2.5.0)
     multi_json (1.15.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    nokogiri (1.11.2)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     nokogiri (1.11.2-x86_64-darwin)
       racc (~> 1.4)
     parallel (1.20.1)
@@ -99,6 +103,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  ruby
   x86_64-darwin-19
   x86_64-darwin-20
 

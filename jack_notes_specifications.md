@@ -1,0 +1,85 @@
+## Domain Model
+
+https://docs.google.com/spreadsheets/d/1d0Gz_mINWiapO09sTUBmpzQA9FhS1RZKjNgzkgxkCbs/edit#gid=0
+
+## Specifications and User Stories
+
+- [ ] Any signed-up user can list a new space.
+      - User Story 2 list a space
+      - Need sign in functionality
+- [ ] Users can list multiple spaces.
+      - User Story 2
+      - User profile functionality
+- [ ] Users should be able to name their space, provide a short description of the space, and a price per night.
+      - User Story 2 - provide details in the list
+- [ ] Users should be able to offer a range of dates where their space is available.
+      - Date functionality
+- [ ] Any signed-up user can request to hire any space for one night, and this should be approved by the user that owns that space.
+      - User Story 1
+      - User Story 4 hire a space
+      - Need date functionality
+      - Need approval functionality
+- [ ] Nights for which a space has already been booked should not be available for users to book that space.
+      - need a date module
+      - method for eliminating unavailable dates
+- [ ] Until a user has confirmed a booking request, that space can still be booked for that night.
+      - Somthing with the approval functionality
+
+#### Nice to Haves
+
+- [ ] Users should receive an email whenever one of the following happens:
+  - [ ] They sign up
+  - [ ] They create a space
+  - [ ] They update a space
+  - [ ] A user requests to book their space
+  - [ ] They confirm a request
+  - [ ] They request to book a space
+  - [ ] Their request to book a space is confirmed
+  - [ ] Their request to book a space is denied
+- [ ] Users should receive a text message to a provided number whenever one of the following happens:
+  - [ ] A user requests to book their space
+  - [ ] Their request to book a space is confirmed
+  - [ ] Their request to book a space is denied
+- [ ] A ‘chat’ functionality once a space has been booked, allowing users whose space-booking request has been confirmed to chat with the user that owns that space
+- [ ] Basic payment implementation though Stripe.
+
+
+
+#### User Story 1
+As a user-booker
+To see what is available
+I want to be able to see a list of all spaces (hammocks)
+
+> SpaceHammock Class - to create an instance
+> HammocksNDrinks Class - store all the created SpaceHammocks
+> view (index.erb) erb file to see all the spaces with (name, description, price per night, owner)
+> Database table for space hammocks (set up two environments) - hammocks
+
+
+
+
+
+#### User Story 2
+As a user-owner(Hammock-Lord! Master of the Beach)
+To add my own hammock/space
+I want to be able to list my space
+
+> List space erb file (with associated buttons and routes)
+> Functionality in HammocksNDrinks to create a space (which uses SpaceHammock class)
+> Include details in spaceHammock (name, description, price per night, owner)
+
+#### User Story 3
+As a user-booker
+To understand what I am looking at
+I want to be able to see the details of the space (name, description, price per night, owner)
+
+#### User Story 4
+As a user-booker
+To hire a space
+I want to be able to book a space hammocks
+
+
+Break down user stories into tickets
+Organise tickets into priority
+
+Sign in - need a user story - second level priority
