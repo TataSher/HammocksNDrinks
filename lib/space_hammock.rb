@@ -1,21 +1,33 @@
 require_relative 'database_connection'
 
 class SpaceHammock
-  def initialize (id, name, price, )
+  def initialize(id, name, description, price_per_night, owner_id, booked, booked_by_user_id)
+    @id = id
+    @name = name
+    @description = description
+    @price_per_night = price_per_night
+    @owner_id = owner_id
+    @booked = booked
+    @booked_by_user_id = booked_by_user_id
+  end
 
   def self.create(name, description, price_per_night, owner_id)
     sql = "INSERT INTO hammocks (name, description, price_per_night, owner_id) VALUES ('#{name}', '#{description}', #{price_per_night}, #{owner_id});"
     DatabaseConnection.query(sql)
   end
 
-  .Limits
-
   def self.find(hammock_id)
-    
+
   end
 
   def book(user_id)
-    @id
+    return false if DatabaseConnection.query("SELECT booked FROM hammocks WHERE id='#{@id}'").first['booked'] == 't'
+    sql = "UPDATE hammocks SET booked=true, booked_by_user_id='#{user_id}' WHERE id='#{@id}' RETURNING booked"
+    if DatabaseConnection.query(sql).first['booked'] == 't'
+      return true
+    else
+      return false
+    end
   end
 end
 
