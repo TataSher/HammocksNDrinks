@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>MakersHnD</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
+
+  <body class="container">
+
+    <% if @booked %>
+      <h1> Successfully booked <%= @hammock.name %>! </h1>
+
+    <% else %>
+      <h1>Do you want to book <%= @hammock.name %>? </h1>
+
+      <form action="/space_hammocks/<%= @hammock.id %>/book" method="post">
+        <input type="submit" value="Confirm Booking">
+      </form>
+    <% end %>
+
+    <form action="/space_hammocks" method="get">
+      <input type="submit" value="Back to Space Hammocks!">
+    </form>
+
+  </body>
+</html>
