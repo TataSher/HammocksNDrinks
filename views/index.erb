@@ -19,10 +19,13 @@
 
     <body class="container">
     <% @all_hammocks.each do |hammock| %>
-    <%=hammock[:name]%>
-    <%=hammock[:description]%>
-    <%=hammock[:price_per_night]%>
-    <br>
+      <%=hammock[:name]%>
+      <%=hammock[:description]%>
+      <%=hammock[:price_per_night]%>
+      <br>
+      <form action="/space_hammocks/<%=hammock[:id]%>/book" method="get" class="hammock_book">
+        <input type="submit" value="Book">
+      </form>
     <%end%>
 
 

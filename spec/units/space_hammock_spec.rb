@@ -10,7 +10,7 @@ describe SpaceHammock do
       expect(new_hammock.price_per_night).to eq('1000')
       expect(new_hammock.owner_id).to eq(2)
     end
-  
+
   describe '.create' do
     it 'creates a space hammock' do
       sql = "INSERT INTO hammocks (name, description, price_per_night, owner_id) VALUES ('test_name', 'test_description', 50, 1);"
@@ -48,18 +48,18 @@ describe SpaceHammock do
   describe '.all' do
     let(:sharkie_hammock) { 'Sharkie' }
     let(:kwaka_hammock) { 'Kwakie' }
-  
+
     it 'has an array of space hammocks' do
-      connection = PG.connect(dbname: 'makers_hnd_database_test')
+      PG.connect(dbname: 'makers_hnd_database_test')
       hammocks = SpaceHammock.all
       expect(hammocks).to be_kind_of(Array)
     end
-  
+
     it 'lists all hammocks' do
       connection = PG.connect(dbname: 'makers_hnd_database_test')
       connection.exec("INSERT INTO hammocks (name, description, price_per_night, owner_id) VALUES ('Sharkie', 'very cool', '1000.00', 1);")
       hammocks = SpaceHammock.all
-      expect(hammocks).to eq ([{:name => "Sharkie", :description => "very cool", :price_per_night => "1000.00"}])
+      expect(hammocks).to eq ([{:id=> '1', :name => "Sharkie", :description => "very cool", :price_per_night => "1000.00"}])
     end
   end
 end

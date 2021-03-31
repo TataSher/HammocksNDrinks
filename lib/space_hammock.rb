@@ -22,7 +22,7 @@ class SpaceHammock
     all_space_hammocks = []
     result = DatabaseConnection.query("SELECT * FROM hammocks")
 		result.map do |hammock|
-          all_space_hammocks << {:name => "#{hammock['name']}", :description => "#{hammock['description']}", :price_per_night => "#{hammock['price_per_night']}"}
+          all_space_hammocks << {:id => "#{hammock['id']}", :name => "#{hammock['name']}", :description => "#{hammock['description']}", :price_per_night => "#{hammock['price_per_night']}"}
 		end
     all_space_hammocks
   end
