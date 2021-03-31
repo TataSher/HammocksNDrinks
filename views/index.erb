@@ -6,14 +6,21 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
 
-  <body class="container">
-
     <form action="/space_hammocks/new" method="get">
       <input type="submit" value="List my Space Hammock">
     </form>
 
     <h1>Available Space Hammocks</h1>
     <h3><%= @name %></h3>
+
+    <body class="container">
+    <% @all_hammocks.each do |hammock| %>
+    <%=hammock[:name]%>
+    <%=hammock[:description]%>
+    <%=hammock[:price_per_night]%>
+    <br>
+    <%end%>
+
 
   </body>
 </html>

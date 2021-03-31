@@ -57,14 +57,24 @@ I want to be able to see a list of all spaces (hammocks)
 
 
 
+
+- Introduce development and test databases
+- Create database and test environments
+- Refactor to make the tests pass
+
+- Refactor the code and tests again when #create method is complete (we will use pg sql commands for now)
+
+
+
+
 #### User Story 2
 As a user-owner(Hammock-Lord! Master of the Beach)
 To add my own hammock/space
 I want to be able to list my space
 
-> List space erb file (with associated buttons and routes) - DONE
-> Functionality in HammocksNDrinks to create a space (which uses SpaceHammock class) - DONE (created database connection class as well)
-> Include details in spaceHammock (name, description, price per night, owner) - Done and setup table to match
+> List space erb file (with associated buttons and routes)
+> Functionality in HammocksNDrinks to create a space (which uses SpaceHammock class)
+> Include details in spaceHammock (name, description, price per night, owner)
 
 #### User Story 3
 As a user-booker
