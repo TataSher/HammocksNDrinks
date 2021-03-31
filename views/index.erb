@@ -5,24 +5,37 @@
     <title>MakersHnD</title>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
+    <header>
+    </header>
 
-    <form action="/space_hammocks/new" method="get">
-      <input type="submit" value="List my Space Hammock">
-    </form>
+    <body class="container" id='list_body'>
+      <div id="home_page_header">
+        <h1 id="page_header">Space Hammocks</h1>
+      </div>
 
-    <h1>Available Space Hammocks</h1>
-    <h3><%= @name %></h3>
+      <div id="hammocks_display_div">
+        <% @all_hammocks.each do |hammock| %>
+          <div id="hammock_containters">
+            <div id='left_side'
+              <p class="left_side_text"><%=hammock[:name]%></p>
+              <p class="left_side_text"><%=hammock[:description]%></p>
+              <p class="left_side_text"><%=hammock[:price_per_night]%></p>
+            </div>
+            <div id='right_side'>
+              <p class="right_side_text"><%=hammock[:price_per_night]%></p>
+              <form action="/space_hammocks/<%=hammock[:id]%>/book" method="get" class="hammock_book">
+                <input id="book_button" type="submit" value="Book">
+              </form>
+            </div>
+          </div>
+        <%end%>
+      </div>
 
-    <body class="container">
-    <% @all_hammocks.each do |hammock| %>
-      <%=hammock[:name]%>
-      <%=hammock[:description]%>
-      <%=hammock[:price_per_night]%>
-      <br>
-      <form action="/space_hammocks/<%=hammock[:id]%>/book" method="get" class="hammock_book">
-        <input type="submit" value="Book">
-      </form>
-    <%end%>
+      <div id="list_hammock_button_div">
+        <form action="/space_hammocks/new" method="get">
+          <input id="list_hammock_button" type="submit" value="List my Space Hammock">
+        </form>
+      </div>
 
 
   </body>
