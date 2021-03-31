@@ -2,7 +2,6 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require 'sinatra/flash'
 require './lib/space_hammock.rb'
-require_relative './lib/hammocks_n_drinks.rb'
 require_relative './db_connection_setup'
 
 class MakersHnDWebApp < Sinatra::Base
@@ -19,8 +18,7 @@ class MakersHnDWebApp < Sinatra::Base
   end
 
   get '/space_hammocks' do
-    @all_hammocks = HammocksNDrinks.all
-    p @all_hammocks
+    @all_hammocks = SpaceHammock.all
     erb :index
   end
 
@@ -49,21 +47,6 @@ class MakersHnDWebApp < Sinatra::Base
     redirect "/space_hammocks/#{params[:id]}/book"
   end
 
-  # get '/space_hammocks/:id/book' do
-  #   @booked = session[:booked]
-  #   session[:hammock] = SpaceHammock.find(params[:id])
-  #   @hammock = session[:hammock]
-  #   erb :'/space_hammocks/booking_form'
-  # end
-  #
-  # post '/space_hammocks/:id/book' do
-  #   @hammock = session[:hammock]
-  #   user_id = 1
-  #   session[:booked] = @hammock.book(user_id)
-  #   redirect "/space_hammocks/#{params[:id]}/book"
-  # end
-
   run! if app_file == $0
-
-  # empty commit
+  
 end

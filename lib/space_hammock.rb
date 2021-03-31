@@ -18,6 +18,15 @@ class SpaceHammock
     DatabaseConnection.query(sql)
   end
 
+  def self.all
+    all_space_hammocks = []
+    result = DatabaseConnection.query("SELECT * FROM hammocks")
+		result.map do |hammock|
+          all_space_hammocks << {:name => "#{hammock['name']}", :description => "#{hammock['description']}", :price_per_night => "#{hammock['price_per_night']}"}
+		end
+    all_space_hammocks
+  end
+
   def self.find(hammock_id)
     sql = "SELECT * FROM hammocks WHERE id='#{hammock_id}';"
     begin
