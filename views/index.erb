@@ -5,7 +5,13 @@
     <title>MakersHnD</title>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
-
+  <body class="container">
+    <header>
+      <h3> Welcome <%=@username ? @username : "Guest"%>!</h3>
+      <!-- nav bar -->
+      <a href="/users/new">Sign Up</a>
+    </header>
+    <br>
     <form action="/space_hammocks/new" method="get">
       <input type="submit" value="List my Space Hammock">
     </form>

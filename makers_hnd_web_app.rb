@@ -19,6 +19,7 @@ class MakersHnDWebApp < Sinatra::Base
 
   get '/space_hammocks' do
     @all_hammocks = SpaceHammock.all
+    @username = session[:username]
     erb :index
   end
 
@@ -61,6 +62,14 @@ class MakersHnDWebApp < Sinatra::Base
     erb :'/space_hammocks/already_booked'
   end
 
-  run! if app_file == $0
+  get '/users/new' do
+    erb :'users/new'
+  end
 
+  post '/users' do
+    session[:username] = params[:username]
+    redirect '/space_hammocks'
+  end
+
+  run! if app_file == $0
 end
