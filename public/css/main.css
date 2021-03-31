@@ -11,6 +11,19 @@ body {
   font-family: 'Berkshire Swash', cursive;
 }
 
+#front_page_button {
+  background-color: rgba(255,255,255,0.3);
+  border: none;
+  color: black;
+  padding: 5px 30px;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Berkshire Swash', cursive;
+  border-radius: 15px;
+  /* opacity: 0.5; */
+  margin-top: 10px;
+}
+
 #home_page_header {
 
 }
@@ -18,7 +31,7 @@ body {
 #page_header {
   margin: 0;
   padding: 0;
-  font-size: 4em;
+  font-size: 3.6em;
 }
 
 
