@@ -14,7 +14,7 @@ class MakersHnDWebApp < Sinatra::Base
   end
 
   get '/' do
-    'hello world'
+    erb :front_page
   end
 
   get '/space_hammocks' do
@@ -34,7 +34,7 @@ class MakersHnDWebApp < Sinatra::Base
   end
 
   get '/space_hammocks/:id/book' do
-    @booked = false # this causing confusion and it tells you you have succesfully booked when the hammock is already booked
+    @booked = false
     if session[:booked]
       @booked = true
       session[:booked] = false
