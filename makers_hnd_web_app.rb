@@ -34,7 +34,11 @@ class MakersHnDWebApp < Sinatra::Base
   end
 
   get '/space_hammocks/:id/book' do
-    @booked = session[:booked] # this causing confusion and it tells you you have succesfully booked when the hammock is already booked
+    @booked = false # this causing confusion and it tells you you have succesfully booked when the hammock is already booked
+    if session[:booked]
+      @booked = true
+      session[:booked] = false
+    end
     session[:hammock] = SpaceHammock.find(params[:id])
     @hammock = session[:hammock]
     if @booked == false
