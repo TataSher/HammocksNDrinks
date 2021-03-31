@@ -49,6 +49,20 @@ class MakersHnDWebApp < Sinatra::Base
     redirect "/space_hammocks/#{params[:id]}/book"
   end
 
+  get '/space_hammocks/:id/book' do
+    @booked = session[:booked]
+    session[:hammock] = SpaceHammock.find(params[:id])
+    @hammock = session[:hammock]
+    erb :'/space_hammocks/booking_form'
+  end
+
+  post '/space_hammocks/:id/book' do
+    @hammock = session[:hammock]
+    user_id = 1
+    session[:booked] = @hammock.book(user_id)
+    redirect "/space_hammocks/#{params[:id]}/book"
+  end
+
   run! if app_file == $0
 
   # empty commit
