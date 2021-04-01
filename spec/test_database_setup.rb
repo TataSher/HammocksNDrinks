@@ -10,7 +10,13 @@ def clean_test_database(connection)
 end
 
 def create_bookmarks_table_in_test(connection)
-	 connection.exec("CREATE TABLE users (id SERIAL PRIMARY KEY, name VARCHAR(200));")
+	 connection.exec("CREATE TABLE users (
+    id SERIAL PRIMARY KEY, 
+    email VARCHAR(200) UNIQUE, 
+    password VARCHAR(140), 
+    name VARCHAR(200), 
+    username VARCHAR(200) UNIQUE
+  );")
 	 connection.exec("CREATE TABLE hammocks (
    id SERIAL PRIMARY KEY,
    name VARCHAR(200),
@@ -22,8 +28,9 @@ def create_bookmarks_table_in_test(connection)
    );")
 end
 
+
 def populate_tables(connection)
-  connection.exec("INSERT INTO users (name) VALUES('test_user_1');")
+  connection.exec("INSERT INTO users (email, password, name, username) VALUES('test@email.com', 'testpass', 'test_user', 'test_username');")
 end
 
 def setup_test_database

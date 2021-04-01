@@ -14,8 +14,14 @@
       <div>
       </div>
       <div id="sign_in_div">
-        <a href="" target="_self" id='link_buttons'>Sign In</a>
-        <a href="" target="_self" id='link_buttons'>Sign Up</a>
+        <% if @username %>
+          <h3> Welcome <%= @username %>!</h3>
+          <a href="/sessions/destroy" id='link_buttons'>Sign Out</a>
+        <% else %>
+          <h3> Welcome Guest!</h3>
+          <a href="/users/new" id='link_buttons'>Sign Up</a>
+          <a href="/sessions/new" id='link_buttons'>Sign In</a>
+        <% end %>
       </div>
     </header>
 

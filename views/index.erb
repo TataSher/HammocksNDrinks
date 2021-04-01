@@ -7,19 +7,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
-    <header>
-    </header>
-
     <body class="container" id='list_body'>
       <header id="header_listings">
         <div>
         </div>
         <div id="sign_in_div">
-          <a href="" target="_self" id='link_buttons'>Sign In</a>
-          <a href="" target="_self" id='link_buttons'>Sign Up</a>
+          <% if @username %>
+          <h3> Welcome <%= @username %>!</h3>
+            <a href="/sessions/destroy" id='link_buttons'>Sign Out</a>
+          <% else %>
+            <h3> Welcome Guest!</h3>
+            <a href="/users/new" id='link_buttons'>Sign Up</a>
+            <a href="/sessions/new" id='link_buttons'>Sign In</a>
+          <% end %>
         </div>
       </header>
-
 
       <main>
       <div id="home_page_header">
