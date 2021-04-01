@@ -38,7 +38,7 @@
               </div>
               <div id='right_side'>
                 <form action="/space_hammocks/<%=hammock[:id]%>/book" method="get" class="hammock_book">
-                <% if @username %> 
+                <% if @username %>
                   <input class="book_button" type="submit" value="Book">
                 <% end %>
                 </form>
@@ -47,12 +47,13 @@
           <%end%>
         </div>
 
+        <% if @username %>
         <div id="list_hammock_button_div">
           <form action="/space_hammocks/new" method="get">
             <input id="list_hammock_button" type="submit" value="List my Space Hammock">
           </form>
         </div>
-
+        <% end %>
       </main>
 
 

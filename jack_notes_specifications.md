@@ -92,10 +92,12 @@ Test-Hammocks:
     - 'Enjoy your luxury holiday on the idyllic planet of Neptune, at Neptune Blues you can while your worries away while drinking our famous Gas Seas Sparkling Methane.'
     - '100 bitcoin
 
-2. 'Sunset on Mercury'
-
+2. 'Sunny days on Mercury'
+    - 'Why settle for only 8 hours of sunshine a day when you can get it for 88 days. Your tan will be out of this world! Our hammocks are fully automateed to provide you with just the right amount of uv your skin can handle.'
+    - 50 bitcoin
 
 3. 'Diamond Seas above Saturn'
+    - 'Enjoy our glorious views of the diamond sea around saturn. '
 
 
 4. 'Alpha Centari'
