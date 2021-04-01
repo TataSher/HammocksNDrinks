@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <h1> Sign in to Hammocks N Drinks! </h1>
+  </head>
+  <body>
+    <%= flash[:error] %>
+    <form action="/sessions" method="post">
+      <input type="email" name="email" placeholder="email@email.com">
+      <input type="password" name="password" placeholder="password">
+      <input type="submit" value="Sign In">
+    </form>
+
+  </body>
+  </html>

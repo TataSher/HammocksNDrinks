@@ -5,7 +5,21 @@
     <title>MakersHnD</title>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
+  <body class="container">
+    <header>
+      <% if @username %>
+      <h3> Welcome <%= @username %>!</h3>
+      <a href="/sessions/destroy">Sign Out</a>
 
+      <% else %>
+        <!-- nav bar -->
+        <h3> Welcome Guest!</h3>
+        <a href="/users/new">Sign Up</a>
+        <a href="/sessions/new">Sign In</a>
+      <% end %>
+      
+    </header>
+    <br>
     <form action="/space_hammocks/new" method="get">
       <input type="submit" value="List my Space Hammock">
     </form>

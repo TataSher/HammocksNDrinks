@@ -1,5 +1,11 @@
-CREATE TABLE users (id SERIAL PRIMARY KEY, name VARCHAR(200));
-INSERT INTO users (name) VALUES('test_user');
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY, 
+  email VARCHAR(200) UNIQUE, 
+  password VARCHAR(140), 
+  name VARCHAR(200), 
+  username VARCHAR(200) UNIQUE
+);
+INSERT INTO users (email, password, name, username) VALUES('test@email.com', 'testpass', 'test_user', 'test_username');
 
 CREATE TABLE hammocks (
 id SERIAL PRIMARY KEY,
