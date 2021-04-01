@@ -17,14 +17,13 @@
         <% @all_hammocks.each do |hammock| %>
           <div id="hammock_containters">
             <div id='left_side'
-              <p class="left_side_text"><%=hammock[:name]%></p>
-              <p class="left_side_text"><%=hammock[:description]%></p>
-              <p class="left_side_text"><%=hammock[:price_per_night]%></p>
+              <p class="name"><%=hammock[:name]%></p>
+              <p class="hammock"><%=hammock[:description]%></p>
+              <p class="price">$<%=hammock[:price_per_night]%></p>
             </div>
             <div id='right_side'>
-              <p class="right_side_text"><%=hammock[:price_per_night]%></p>
               <form action="/space_hammocks/<%=hammock[:id]%>/book" method="get" class="hammock_book">
-                <input id="book_button" type="submit" value="Book">
+                <input class="book_button" type="submit" value="Book">
               </form>
             </div>
           </div>

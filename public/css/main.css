@@ -7,37 +7,38 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  position: relative;
+  /* position: relative; */
   text-align: center;
   color: white;
   background-color: black;
-  font-family: 'Berkshire Swash', cursive;
+  font-family: 'Berkshire Swash';
 }
 
 #front_page_button {
   background-color: rgba(255,255,255,0.3);
   border: none;
-  color: black;
+  color: rgb(0, 0, 0);
   padding: 5px 30px;
   text-align: center;
   font-size: 20px;
-  font-family: 'Berkshire Swash', cursive;
+  font-family: 'Berkshire Swash';
   border-radius: 15px;
   /* opacity: 0.5; */
   margin-top: 10px;
 }
 
-#home_page_header {
+ #home_page_header {
   position: center;
-}
+} 
 
 #page_header {
   margin: auto;
-  padding: 0;
+  padding-top: 30px;
   font-size: 3.6em;
-  position: fixed;
+  /* position: fixed; */
   text-align: center;
   left: 40%;
+  line-height: 1;
   /* margin-left: -100px; */
 
 }
@@ -49,20 +50,20 @@ body {
   padding: 5px 30px;
   text-align: center;
   font-size: 20px;
-  font-family: 'Berkshire Swash', cursive;
+  font-family: 'Berkshire Swash';
   border-radius: 15px;
   /* opacity: 0.5; */
   margin-top: 10px;
 }
 
 #hammocks_display_div {
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
 #hammock_containters {
   background-color: rgba(255,255,255,0.7);
   color: black;
-  margin: 10px auto;
+  margin: 20px auto;
   border: 2px solid white;
   border-radius: 15px;
   width: 75%;
@@ -70,30 +71,91 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
+#left_side{
+text-align: left;
+margin: 20px;
+}
+.name {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+}
 
-#left_side {
-  text-align: left;
-  margin: 10px;
+.hammock {
+  font-size: 16px;
+  line-height: 1;
+  font-weight: normal;
+  font-style: italic;
+}
 
+.price {
+  font-size: 16px;
+  line-height: 1;
 }
 
 #right_side {
-  margin: 10px;
-}
+  position: static;
+  margin: 20px
+} 
 
-#book_button {
+.book_button {
   background-color: rgba(245,145,164,0.9);
   border: none;
   color: black;
-  padding: 5px 30px;
+  padding: 5px 20px;
   text-align: center;
   font-size: 20px;
-  font-family: 'Berkshire Swash', cursive;
+  font-family: 'Berkshire Swash';
   border-radius: 15px;
   /* opacity: 0.5; */
-  margin-top: 10px;
 }
 
+#hammocks_listing_div {
+  padding-top: 20px;
+  text-align: center;
+}
+
+    #listing_name {
+    background-color: rgba(255,255,255,0.7);
+    color: black;
+    margin: 10px auto;
+    border: 2px solid white;
+    border-radius: 15px;
+  }
+
+    #listing_description {
+    background-color: rgba(255,255,255,0.7);
+    color: black;
+    margin: 10px auto;
+    border: 2px solid white;
+    border-radius: 15px;
+  }
+
+    #listing_price_per_night {
+    background-color: rgba(255,255,255,0.7);
+    color: black;
+    margin: 10px auto;
+    border: 2px solid white;
+    border-radius: 15px;
+  }
+
+  .listing_label {
+  font-size: 20px;
+  font-family: 'Berkshire Swash';
+  margin: 10px;
+  }
+
+#list_button {
+  background-color: rgba(245,145,164,0.9);
+  border: none;
+  color: black;
+  padding: 5px 20px;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Berkshire Swash';
+  border-radius: 15px;
+  /* opacity: 0.5; */
+}
 /* rock a bye
 
 3508 * 2480 */
