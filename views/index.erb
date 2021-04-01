@@ -38,7 +38,9 @@
               </div>
               <div id='right_side'>
                 <form action="/space_hammocks/<%=hammock[:id]%>/book" method="get" class="hammock_book">
+                <% if @username %> 
                   <input class="book_button" type="submit" value="Book">
+                <% end %>
                 </form>
               </div>
             </div>
