@@ -4,6 +4,7 @@
     <h1> Sign up to Hammocks N Drinks! </h1>
   </head>
   <body>
+    <%= flash[:error] %>
     <form action="/users" method="post">
       <input type="text" name="name" placeholder="Name">
       <input type="text" name="username" placeholder="Username">

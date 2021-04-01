@@ -1,9 +1,9 @@
 CREATE TABLE users (
   id SERIAL PRIMARY KEY, 
-  email VARCHAR(200), 
-  password VARCHAR(50), 
+  email VARCHAR(200) UNIQUE, 
+  password VARCHAR(140), 
   name VARCHAR(200), 
-  username VARCHAR(200)
+  username VARCHAR(200) UNIQUE
 );
 INSERT INTO users (email, password, name, username) VALUES('test@email.com', 'testpass', 'test_user', 'test_username');
 

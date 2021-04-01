@@ -12,10 +12,10 @@ end
 def create_bookmarks_table_in_test(connection)
 	 connection.exec("CREATE TABLE users (
     id SERIAL PRIMARY KEY, 
-    email VARCHAR(200), 
-    password VARCHAR(50), 
+    email VARCHAR(200) UNIQUE, 
+    password VARCHAR(140), 
     name VARCHAR(200), 
-    username VARCHAR(200)
+    username VARCHAR(200) UNIQUE
   );")
 	 connection.exec("CREATE TABLE hammocks (
    id SERIAL PRIMARY KEY,

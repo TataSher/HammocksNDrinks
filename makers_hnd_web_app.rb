@@ -3,6 +3,7 @@ require 'sinatra/reloader'
 require 'sinatra/flash'
 require './lib/space_hammock.rb'
 require_relative './db_connection_setup'
+require_relative './lib/user'
 
 class MakersHnDWebApp < Sinatra::Base
   enable :sessions, :method_override
@@ -67,8 +68,14 @@ class MakersHnDWebApp < Sinatra::Base
   end
 
   post '/users' do
-    session[:username] = params[:username]
-    redirect '/space_hammocks'
+    user = User.create(params[:email], params[:password], params[:name], params[:username])
+    if user
+      session[:username] = user.username
+      redirect '/space_hammocks'
+    else
+      flash[:error] = 'Email or Username already exists.'
+      redirect('/users/new')
+    end
   end
 
   get '/sessions/new' do
@@ -78,7 +85,6 @@ class MakersHnDWebApp < Sinatra::Base
   post '/sessions' do
     user = User.sign_in(params[:email], params[:password])
     if user
-      session[:user_id] = user.id
       session[:username] = user.username
       redirect('/space_hammocks')
     else
@@ -89,7 +95,7 @@ class MakersHnDWebApp < Sinatra::Base
 
   get '/sessions/destroy' do
     session.clear
-    redirect('/')
+    redirect('/space_hammocks')
   end
 
   run! if app_file == $0
