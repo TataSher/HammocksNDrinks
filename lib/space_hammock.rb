@@ -14,6 +14,8 @@ class SpaceHammock
   end
 
   def self.create(name, description, price_per_night, owner_id)
+    name = name.gsub("'", "''")
+    description = description.gsub("'", "''")
     sql = "INSERT INTO hammocks (name, description, price_per_night, owner_id) VALUES ('#{name}', '#{description}', #{price_per_night}, #{owner_id});"
     DatabaseConnection.query(sql)
   end
@@ -49,13 +51,3 @@ class SpaceHammock
     end
   end
 end
-
-
-#Book BUtton ----> Router ---> HammockNDrinks ------> SpaceHammock -------> Database Connection --------> Database Hammocks, Users
-
-# Router ------> HammockNDrinks (.all -----> Space Hammock)   --------> Database Connection ------ Database
-#        ------> Space Hammock     --------> Database Connection ------ Database
-
-
-# Router/hammack_drinks ------> Space Hammock     --------> Database Connection ------ Database   being booked
-#                       ------> User     --------> Database Connection ------ Database     post hammock

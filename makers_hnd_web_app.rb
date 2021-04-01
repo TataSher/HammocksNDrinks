@@ -32,7 +32,7 @@ class MakersHnDWebApp < Sinatra::Base
 
   post '/space_hammocks' do
     SpaceHammock.create(params[:name], params[:description],
-                           params[:price_per_night], 1) # 1 is proxy for user
+                           params[:price_per_night], session[:user_id]) # 1 is proxy for user
     session[:name] = params[:name]
     redirect '/space_hammocks'
   end
@@ -56,8 +56,7 @@ class MakersHnDWebApp < Sinatra::Base
 
   post '/space_hammocks/:id/book' do
     @hammock = session[:hammock]
-    user_id = 1
-    session[:booked] = @hammock.book(user_id)
+    session[:booked] = @hammock.book(session[:user_id])
     redirect "/space_hammocks/#{params[:id]}/book"
   end
 
@@ -75,6 +74,7 @@ class MakersHnDWebApp < Sinatra::Base
     user = User.create(params[:email], params[:password], params[:name], params[:username])
     if user
       session[:username] = user.username
+      session[:user_id] = user.id
       redirect '/space_hammocks'
     else
       flash[:error] = 'Email or Username already exists.'
@@ -90,6 +90,7 @@ class MakersHnDWebApp < Sinatra::Base
     user = User.sign_in(params[:email], params[:password])
     if user
       session[:username] = user.username
+      session[:user_id] = user.id
       redirect('/space_hammocks')
     else
       flash[:error] = 'Please check your email or password.'
