@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
 
-  <body <%= @booked ? "class='new_booking_background'" : "class='empty_background'" %>>
+  <body class="container">
 
     <header id="header_listings">
       <div>
@@ -25,20 +25,17 @@
       </div>
     </header>
 
-    <% if @booked %>
-      <h1> Successfully booked <%= @hammock.name %>! </h1>
+    <div id="home_page_header">
+      <h1 id="page_header">Hammocks</h1>
+      <h1 id="page_header">N'</h1>
+      <h1 id="page_header">Drinks</h1>
+    </div>
 
-    <% else %>
-      <h1>Do you want to book <%= @hammock.name %>? </h1>
-
-      <form action="/space_hammocks/<%= @hammock.id %>/book" method="post">
-        <input class='confirm_booking_button' type="submit" value="Confirm Booking">
+    <div id="home_page_entry_button">
+      <form action="/space_hammocks" method="get">
+        <input id="front_page_button" type="submit" value="Book your Space Hammock!">
       </form>
-    <% end %>
-
-    <form action="/space_hammocks" method="get">
-      <input class='confirm_booking_button' type="submit" value="Back to Space Hammocks!">
-    </form>
+    </div>
 
   </body>
 </html>

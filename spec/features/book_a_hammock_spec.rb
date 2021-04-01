@@ -15,7 +15,7 @@ feature 'book a hammock' do
     click_button 'Confirm Booking'
     visit '/space_hammocks'
     first('.hammock_book').click_button 'Book'
-    expect(page).to have_content("test_name is already booked! Please choose another Hammock.")
+    expect(page).to have_content("test_name is already booked!")
   end
 
   scenario 'you book a hammock and then you can book another hammock' do

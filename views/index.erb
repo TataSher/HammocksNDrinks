@@ -3,40 +3,55 @@
   <head>
     <meta charset="UTF-8">
     <title>MakersHnD</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
-  <body class="container">
-    <header>
-      <% if @username %>
-      <h3> Welcome <%= @username %>!</h3>
-      <a href="/sessions/destroy">Sign Out</a>
+    <body class="container" id='list_body'>
+      <header id="header_listings">
+        <div>
+        </div>
+        <div id="sign_in_div">
+          <% if @username %>
+          <h3> Welcome <%= @username %>!</h3>
+            <a href="/sessions/destroy" id='link_buttons'>Sign Out</a>
+          <% else %>
+            <h3> Welcome Guest!</h3>
+            <a href="/users/new" id='link_buttons'>Sign Up</a>
+            <a href="/sessions/new" id='link_buttons'>Sign In</a>
+          <% end %>
+        </div>
+      </header>
 
-      <% else %>
-        <!-- nav bar -->
-        <h3> Welcome Guest!</h3>
-        <a href="/users/new">Sign Up</a>
-        <a href="/sessions/new">Sign In</a>
-      <% end %>
-      
-    </header>
-    <br>
-    <form action="/space_hammocks/new" method="get">
-      <input type="submit" value="List my Space Hammock">
-    </form>
+      <main>
+      <div id="home_page_header">
+        <h1 id="page_header">Space Hammocks</h1>
+      </div>
 
-    <h1>Available Space Hammocks</h1>
-    <h3><%= @name %></h3>
+        <div id="hammocks_display_div">
+          <% @all_hammocks.each do |hammock| %>
+            <div id="hammock_containters">
+              <div id='left_side'
+                <p class="name"><%=hammock[:name]%></p>
+                <p class="hammock"><%=hammock[:description]%></p>
+                <p class="price">₿<%=hammock[:price_per_night]%></p>
+              </div>
+              <div id='right_side'>
+                <form action="/space_hammocks/<%=hammock[:id]%>/book" method="get" class="hammock_book">
+                  <input class="book_button" type="submit" value="Book">
+                </form>
+              </div>
+            </div>
+          <%end%>
+        </div>
 
-    <body class="container">
-    <% @all_hammocks.each do |hammock| %>
-      <%=hammock[:name]%>
-      <%=hammock[:description]%>
-      <%=hammock[:price_per_night]%>
-      <br>
-      <form action="/space_hammocks/<%=hammock[:id]%>/book" method="get" class="hammock_book">
-        <input type="submit" value="Book">
-      </form>
-    <%end%>
+        <div id="list_hammock_button_div">
+          <form action="/space_hammocks/new" method="get">
+            <input id="list_hammock_button" type="submit" value="List my Space Hammock">
+          </form>
+        </div>
+
+      </main>
 
 
   </body>

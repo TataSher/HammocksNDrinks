@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <h1> Sign up to Hammocks N Drinks! </h1>
+    <meta charset="UTF-8">
+    <title>MakersHnD</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
   <body>
+    <div id="home_page_header">
+      <h1 id="page_header">Create your profile</h1>
+    </div>
     <%= flash[:error] %>
     <form action="/users" method="post">
-      <input type="text" name="name" placeholder="Name">
-      <input type="text" name="username" placeholder="Username">
-      <input type="email" name="email" placeholder="email@email.com">
-      <input type="password" name="password" placeholder="password">
-      <input type="submit" value="Sign Up">
+      <input id='listing_name'  type="text" name="name" placeholder="Name">
+      <input id='listing_name'  type="text" name="username" placeholder="Username">
+      <input id='listing_name'  type="email" name="email" placeholder="email@email.com">
+      <input id='listing_name'  type="password" name="password" placeholder="password">
+      <input id='list_button' type="submit" value="Sign Up">
     </form>
 
+    <form action="/space_hammocks" method="get">
+      <input id='list_button2' type="submit" value="Back to Space Hammocks!">
+    </form>
   </body>
   </html>
