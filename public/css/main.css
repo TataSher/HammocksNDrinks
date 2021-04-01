@@ -2,7 +2,7 @@
 
 
 body {
-  background-image: url("/resources/Space_Hammock_no_title.jpg");
+  background-image: url("/resources/Space_Hammock_no_title.jpg"); */
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,7 +11,15 @@ body {
   text-align: center;
   color: white;
   background-color: black;
-  font-family: 'Berkshire Swash';
+  font-family: 'Berkshire Swash', cursive;
+}
+
+.empty_background {
+  background-image: url("/resources/Space Hammock - empty.jpg");
+}
+
+.booked_background {
+  background-image: url("/resources/Space Hammock - hendgehog.jpg");
 }
 
 #front_page_button {
@@ -43,6 +51,27 @@ body {
 
 }
 
+#booked_header {
+  margin: auto;
+  padding-top: 30px;
+  font-size: 3.1em;
+  text-align: center;
+  left: 40%;
+  line-height: 1;
+}
+
+#booked_sub_header {
+  margin: 20px auto 40px auto;
+  padding-top: 10px;
+  font-size: 2.5em;
+  /* position: fixed; */
+  text-align: center;
+  left: 40%;
+  line-height: 1;
+  /* margin-left: -100px; */
+
+}
+
 #list_hammock_button {
   background-color: rgba(245,145,164,0.9);
   border: none;
@@ -50,7 +79,7 @@ body {
   padding: 5px 30px;
   text-align: center;
   font-size: 20px;
-  font-family: 'Berkshire Swash';
+  font-family: 'Berkshire Swash', cursive;
   border-radius: 15px;
   /* opacity: 0.5; */
   margin-top: 10px;
@@ -105,8 +134,21 @@ margin: 20px;
   padding: 5px 20px;
   text-align: center;
   font-size: 20px;
-  font-family: 'Berkshire Swash';
+  font-family: 'Berkshire Swash', cursive;
   border-radius: 15px;
+  /* opacity: 0.5; */
+}
+
+.confirm_booking_button {
+  background-color: rgba(245,145,164,0.9);
+  border: none;
+  color: black;
+  padding: 5px 20px;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Berkshire Swash', cursive;
+  border-radius: 15px;
+  margin: 20px auto;
   /* opacity: 0.5; */
 }
 
@@ -141,7 +183,7 @@ margin: 20px;
 
   .listing_label {
   font-size: 20px;
-  font-family: 'Berkshire Swash';
+  font-family: 'Berkshire Swash', cursive;
   margin: 10px;
   }
 
@@ -152,7 +194,7 @@ margin: 20px;
   padding: 5px 20px;
   text-align: center;
   font-size: 20px;
-  font-family: 'Berkshire Swash';
+  font-family: 'Berkshire Swash', cursive;
   border-radius: 15px;
   /* opacity: 0.5; */
 }

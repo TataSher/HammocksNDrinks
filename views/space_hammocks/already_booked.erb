@@ -3,15 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <title>MakersHnD</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
 
-  <body class="container">
+  <body class="booked_background">
 
-    <h1><%= @hammock.name %> is already booked! Please choose another Hammock.</h1>
+    <h1 id='booked_header'><%= @hammock.name %> is already booked!</h1>
+    <h2 id='booked_sub_header'>Please choose another Hammock.</h2> 
 
     <form action="/space_hammocks" method="get">
-      <input type="submit" value="Back to Space Hammocks!">
+      <input id='list_button' type="submit" value="Back to Space Hammocks!">
     </form>
 
   </body>
